@@ -521,10 +521,10 @@ tailwind.config = {
           <div class="w-16 h-16 rounded-full bg-gold-100 text-gold-700 flex items-center justify-center text-3xl mx-auto">✓</div>
           <h3 class="font-editorial text-3xl font-semibold text-olive-900">Presença Registrada com Sucesso!</h3>
           <p class="text-sm text-olive-700 max-w-md mx-auto">
-            Muito obrigado! Se a mensagem não abriu sozinha, use o botão abaixo para reenviar. Mal podemos esperar pelo dia 13 de março de 2027!
+            Falta só um passo: no WhatsApp que abriu, toque em <strong>Enviar</strong>. Se ele não abriu, use o botão abaixo. Mal podemos esperar pelo dia 13 de março de 2027!
           </p>
           <button onclick="resendRSVP()" class="px-5 py-2.5 rounded-full bg-olive-700 text-white text-xs font-semibold hover:bg-olive-900 transition">
-            Reenviar confirmação
+            Abrir WhatsApp novamente
           </button>
           <button onclick="resetPublicRSVPForm()" class="px-5 py-2.5 rounded-full bg-cream text-olive-800 text-xs font-semibold hover:bg-olive-100 transition">
             Enviar outra confirmação
@@ -631,7 +631,7 @@ tailwind.config = {
 // ===== CONFIGURAÇÃO DO RSVP =====
 // Coloque o WhatsApp do casal com DDI+DDD, só números (ex: '5547999999999').
 // Se ficar vazio, a confirmação é enviada por e-mail.
-const WHATSAPP_NUMERO = '';
+const WHATSAPP_NUMERO = '5547999570275';
 const EMAIL_RSVP = 'filipiperboni09@gmail.com';
 
 const WEDDING_DATE = new Date('2027-03-13T18:30:00-03:00');
@@ -898,7 +898,7 @@ window.handlePublicRSVP = function(e) {
   }
   document.getElementById('public-rsvp-form').classList.add('hidden');
   document.getElementById('public-rsvp-success').classList.remove('hidden');
-  showToast('Obrigado! Envie a mensagem que abriu para concluir.');
+  showToast('Quase lá! Toque em Enviar no WhatsApp para concluir.');
 };
 
 window.resendRSVP = function() {

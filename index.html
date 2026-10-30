@@ -499,11 +499,6 @@ tailwind.config = {
               <label class="block text-xs font-bold uppercase tracking-wider text-olive-700 mb-1.5">Nome completo de todos que vão (incluindo você) *</label>
               <textarea id="rsvp-names" rows="3" placeholder="Um nome por linha" class="w-full px-4 py-3 rounded-xl border border-cream-border bg-cream-light text-sm focus:outline-none focus:border-olive-600"></textarea>
             </div>
-
-            <div>
-              <label class="block text-xs font-bold uppercase tracking-wider text-olive-700 mb-1.5">Alguma restrição alimentar?</label>
-              <input id="rsvp-diet" type="text" placeholder="Ex: 1 vegetariano, 1 alergia a camarão" class="w-full px-4 py-3 rounded-xl border border-cream-border bg-cream-light text-sm focus:outline-none focus:border-olive-600">
-            </div>
           </div>
 
           <div>
@@ -861,7 +856,6 @@ window.handlePublicRSVP = function(e) {
     const k05 = parseInt(document.getElementById('rsvp-kids05').value, 10) || 0;
     const k612 = parseInt(document.getElementById('rsvp-kids612').value, 10) || 0;
     const nomes = document.getElementById('rsvp-names').value.split('\n').map(s => s.trim()).filter(Boolean);
-    const diet = document.getElementById('rsvp-diet').value.trim();
     if (count < 1) return fail('Informe o total de pessoas.');
     if (k05 + k612 > count) return fail('O número de crianças não pode ser maior que o total de pessoas.');
     if (!nomes.length) return fail('Informe o nome de quem vai.');
@@ -872,9 +866,7 @@ window.handlePublicRSVP = function(e) {
       'Crianças 6 a 12 anos: ' + k612,
       '',
       'Nomes:',
-      ...nomes.map(n => '- ' + n),
-      diet ? '' : null,
-      diet ? 'Restrição alimentar: ' + diet : null
+      ...nomes.map(n => '- ' + n)
     ];
   } else {
     linhas = ['Resposta: NÃO poderei ir'];

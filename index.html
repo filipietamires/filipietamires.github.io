@@ -139,7 +139,7 @@ tailwind.config = {
       <button onclick="scrollToSection('hero-sec')" class="font-cinzel text-lg sm:text-xl font-medium text-olive-900 tracking-wide">
         Filipi <span class="text-gold-500">&amp;</span> Tamires
       </button>
-      <div class="hidden md:flex items-center gap-7 text-sm font-medium text-olive-800">
+      <div class="hidden lg:flex items-center gap-6 text-sm font-medium text-olive-800 whitespace-nowrap">
         <button onclick="scrollToSection('historia-sec')" class="hover:text-gold-600 transition">Nossa História</button>
         <button onclick="scrollToSection('programacao-sec')" class="hover:text-gold-600 transition">O Grande Dia</button>
         <button onclick="scrollToSection('traje-sec')" class="hover:text-gold-600 transition">Traje</button>
@@ -553,8 +553,9 @@ tailwind.config = {
           Selecione uma cota acima ou copie a chave diretamente abaixo:
         </p>
         <div class="bg-white/10 border border-white/15 rounded-2xl px-4 py-3.5 font-mono text-sm sm:text-base text-gold-200 mb-5 select-all break-all">
-          filipiperboni09@gmail.com
+          (47) 99957-0275
         </div>
+        <p class="text-xs text-olive-200 -mt-3 mb-5">Chave do tipo celular · em nome de Tamires</p>
         <div class="flex flex-wrap justify-center gap-3">
           <button onclick="copyPixKey()" class="px-6 py-3 rounded-full bg-gold-500 hover:bg-gold-400 text-olive-950 font-bold text-xs sm:text-sm transition inline-flex items-center gap-2">
             📋 Copiar Chave PIX
@@ -634,7 +635,7 @@ const WHATSAPP_NUMERO = '';
 const EMAIL_RSVP = 'filipiperboni09@gmail.com';
 
 const WEDDING_DATE = new Date('2027-03-13T18:30:00-03:00');
-const PIX_KEY = 'filipiperboni09@gmail.com';
+const PIX_KEY = '47999570275';
 
 // ===== LINKS DE PAGAMENTO NO CARTÃO (Mercado Pago) =====
 // Cole entre as aspas o link de cada cota. Enquanto estiver vazio, o botão "Cartão" não aparece.
@@ -780,7 +781,7 @@ window.selectGiftQuota = function(idx) {
 };
 
 window.copyPixKey = function(customMsg) {
-  const msg = customMsg || '✅ Chave PIX (filipiperboni09@gmail.com) copiada com sucesso!';
+  const msg = customMsg || '✅ Chave PIX (47) 99957-0275 copiada com sucesso!';
   if (navigator.clipboard && navigator.clipboard.writeText) {
     navigator.clipboard.writeText(PIX_KEY).then(() => {
       document.getElementById('pix-feedback-msg').textContent = msg;
